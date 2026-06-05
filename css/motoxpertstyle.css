@@ -1,0 +1,315 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+body {
+    background-color: #0f1115; 
+    color: #e2e8f0; 
+    line-height: 1.6;
+}
+
+/*HEADER DE NAVEGACIÓN */
+header {
+    background-color: #161920; 
+    border-bottom: 3px solid #e53e3e; 
+    padding: 15px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+nav a {
+    color: #a0aec0;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e53e3e; /* Rojo deportivo al pasar el cursor */
+}
+
+/*SECCION BANNER */
+.banner-container {
+    max-width: 100%;
+    background: linear-gradient(rgba(22, 25, 32, 0.85), rgba(15, 17, 21, 1)), 
+                url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?q=80&w=1200') no-repeat center/cover;
+}   
+
+.banner {
+    text-align: center;
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.banner h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.banner p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
+}
+
+/* ESTRUCTURA DE COLUMNAS (CONTENEDOR PADRE) */
+.main-container {
+    max-width: 1200px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    display: flex; 
+    gap: 30px; 
+    align-items: flex-start;
+}
+
+/* DISEÑO DE FILTROS */
+aside {
+    width: 280px; /* Ancho fijo para la barra lateral */
+    flex-shrink: 0; /* Evita que se encoja o colapse */
+    background-color: #161920;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border: 1px solid #232731;
+}
+
+aside h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    border-left: 4px solid #e53e3e;
+    padding-left: 10px;
+}
+
+aside h2 {
+    color: #ffffff;
+    font-size: 1.3rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 4px solid #e53e3e;
+    padding-left: 10px;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.filter label {
+    display: block;
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.filter select {
+    background-color: #0f1115;
+    color: #ffffff;
+    border: 1px solid #334155;
+    padding: 8px 12px;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    width: 100%; /* Ocupa todo el ancho disponible del aside */
+    transition: border-color 0.3s ease;
+}
+
+.filter select:focus {
+    border-color: #e53e3e;
+}
+
+aside ul {
+    padding-left: 20px;
+    color: #cbd5e1;
+}
+
+aside ul li {
+    margin-bottom: 8px;
+}
+
+/* CATÁLOGO DE MOTOS (SECCIÓN PRINCIPAL A LA DERECHA) */
+.catalog {
+    flex-grow: 1; /* Permite al catálogo expandirse en el espacio restante */
+}
+
+.tarjetas > h2 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+}
+
+.stories-container {
+    display: grid;
+    grid-template-columns: repeat(2, 6fr); /* Dos columnas de tarjetas */
+    gap: 30px; /* Espaciado equilibrado */
+}
+
+.moto-card {
+    background-color: #161920;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex; /* Flexbox para que todo el contenido se alinee en columna internamente */
+    flex-direction: column;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #232731;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.moto-card:hover {
+    transform: translateY(-5px);
+    border-color: #e53e3e; /* Resalta el borde en rojo */
+}
+
+/* Contenedor de la Imagen */
+.moto-img {
+    position: relative;
+    width: 90%;
+    height: 200px;
+    background-color: #1f242f;
+    overflow: hidden;
+}
+
+.moto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Contenedor de la Información */
+
+.moto-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.moto-info h2 {
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+}
+
+.moto-info p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+/* Especificaciones técnicas (Reemplazando el selector strong antiguo) */
+.specs-box {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    background-color: #1f242f;
+    padding: 1px;
+    border-radius: 4px;
+    border-left: 3px solid #e53e3e;
+    margin-bottom: 5px;
+    margin-top: auto; 
+}
+
+.specs-box p {
+    margin-bottom: 5px;
+    color: #cbd5e1;
+}
+
+.specs-box p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contenedor de Precio */
+.price-box {
+    margin-top: 5px;
+}
+
+.price {
+    display: block;
+    color: #e53e3e; 
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* PIE DE PÁGINA (FOOTER) */
+footer {
+    background-color: #090a0f;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 1px solid #161920;
+    clear: both;
+}
+
+.redes-sociales {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.redes-sociales a {
+    color: #a0aec0;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    color: #e53e3e;
+}
+
+.redes-sociales span {
+    display: block;
+    color: #64748b;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.redes-sociales p {
+    color: #475569;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* RESPONSIVO (MÓVILES Y TABLETS) */
+@media (max-width: 900px) {
+    .stories-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; 
+    }
+    
+    aside {
+        width: 100%;
+    }
+
+    .banner h2 {
+        font-size: 1.8rem;
+    }
+}
